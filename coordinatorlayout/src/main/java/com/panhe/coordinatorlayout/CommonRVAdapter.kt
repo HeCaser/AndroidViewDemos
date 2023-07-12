@@ -13,14 +13,20 @@ import androidx.recyclerview.widget.RecyclerView
  * @date: 2023/7/11
  * @desc:
  */
-class CommonRVAdapter(private val itemCount: Int):RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+class CommonRVAdapter(private val itemCount: Int) :
+    RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
-    inner class RvCommonHolder(view: View) : RecyclerView.ViewHolder(view) {
-
+    inner class RvCommonHolder(view: View, private val textView: TextView) :
+        RecyclerView.ViewHolder(view) {
+        fun setText() {
+            textView.text = "$adapterPosition"
+        }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
-        val ll = LinearLayout(parent.context)
+        val ll = LinearLayout(parent.context).apply {
+            orientation = LinearLayout.VERTICAL
+        }
         val view = TextView(parent.context).apply {
             textSize = 20f
             gravity = Gravity.CENTER
@@ -31,8 +37,8 @@ class CommonRVAdapter(private val itemCount: Int):RecyclerView.Adapter<RecyclerV
 
 
         ll.addView(view)
-        ll.addView(line,LinearLayout.LayoutParams.MATCH_PARENT,2)
-        return RvCommonHolder(ll)
+        ll.addView(line, LinearLayout.LayoutParams.MATCH_PARENT, 2)
+        return RvCommonHolder(ll, view)
     }
 
     override fun getItemCount(): Int {
@@ -40,5 +46,8 @@ class CommonRVAdapter(private val itemCount: Int):RecyclerView.Adapter<RecyclerV
     }
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
+        if (holder is RvCommonHolder) {
+            holder.setText()
+        }
     }
 }

@@ -8,6 +8,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AndroidViewDemos">
         <activity
+            android:name=".AppBarLayoutActivity"
+            android:exported="false" />
+        <activity
             android:name=".CoordinatorMainActivity"
             android:exported="true">
             <intent-filter>
