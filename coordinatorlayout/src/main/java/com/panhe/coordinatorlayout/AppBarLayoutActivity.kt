@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.google.android.material.appbar.AppBarLayout
 
 class AppBarLayoutActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -15,5 +16,18 @@ class AppBarLayoutActivity : AppCompatActivity() {
             adapter = CommonRVAdapter(100)
             layoutManager = LinearLayoutManager(this@AppBarLayoutActivity)
         }
+
+
+        initAppBar()
+    }
+
+
+    private fun initAppBar(){
+        val appBar = findViewById<AppBarLayout>(R.id.appBar)
+        // 监听 AppBar 移动的偏移量
+        appBar.addOnOffsetChangedListener { appBarLayout, verticalOffset ->
+            println("hepan total height = ${appBarLayout.height}  offset = $verticalOffset" )
+        }
+
     }
 }
