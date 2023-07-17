@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import com.panhe.coordinatorlayout.activity.AppBarLayoutActivity
 
 class CoordinatorMainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

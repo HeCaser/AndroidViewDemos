@@ -1,10 +1,12 @@
-package com.panhe.coordinatorlayout
+package com.panhe.coordinatorlayout.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.appbar.AppBarLayout
+import com.panhe.coordinatorlayout.adapter.CommonRVAdapter
+import com.panhe.coordinatorlayout.R
 
 class AppBarLayoutActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

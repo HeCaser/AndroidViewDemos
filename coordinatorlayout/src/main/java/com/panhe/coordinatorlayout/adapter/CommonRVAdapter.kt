@@ -1,4 +1,4 @@
-package com.panhe.coordinatorlayout
+package com.panhe.coordinatorlayout.adapter
 
 import android.graphics.Color
 import android.view.Gravity

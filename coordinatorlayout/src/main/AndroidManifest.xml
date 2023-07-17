@@ -8,7 +8,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AndroidViewDemos">
         <activity
-            android:name=".AppBarLayoutActivity"
+            android:name=".activity.AppBarLayoutActivity"
             android:exported="false" />
         <activity
             android:name=".CoordinatorMainActivity"
